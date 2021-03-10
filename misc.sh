@@ -106,8 +106,8 @@ alias timer_alerter="bash ~/private/git/shell_settings/util/time/timer_alerter.b
 alias timer_sound="bash ~/private/git/shell_settings/util/time/timer_sound.bash"
 alias timer_terminal-notifier="bash ~/private/git/shell_settings/util/time/timer_terminal-notifier.bash"
 
-alias lt="cat ~/temp-local-terminal-memo.md | peco | pbcopy"
-alias t="cat ~/private/git/box/memo/terminal.sh | peco | pbcopy"
+alias tp="cat ~/private/git/box/memo/terminal-private.sh | peco | pbcopy"
+alias t="cat ~/private/git/company/memo/terminal.sh | peco | pbcopy"
 
 alias sv="bash ~/private/git/box/program/shell_script/mac-air/search-videos.sh"
 
