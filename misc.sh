@@ -111,7 +111,7 @@ alias t="cat ~/private/git/company/memo/terminal.sh | peco | pbcopy"
 
 alias sv="bash ~/private/git/box/program/shell_script/mac-air/search-videos.sh"
 
-alias kb='node ~/private/git/punch/dist/command/punchBreaktime.js'
-alias ko='node ~/private/git/punch/dist/command/punchOvertime.js'
+alias kb='date ; node ~/private/git/punch/dist/command/punchBreaktime.js'
+alias ko='date ; node ~/private/git/punch/dist/command/punchOvertime.js'
 alias kp='node ~/private/git/punch/dist/command/printTime.js'
 
