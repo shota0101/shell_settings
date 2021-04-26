@@ -59,6 +59,13 @@ function ad () {
 }
 
 # 分単位でsleepする
+function mov () {
+    echo ${1}
+    cp "${1}" ~/private/git/movie-controller/movies/current/movie1.mov
+    open -a /Applications/Google\ Chrome.app file:///Users/lin/private/git/movie-controller/page-mov1.html
+}
+
+# 分単位でsleepする
 function minutes () {
     seconds=`expr $1 \* 3600`
     sleep $seconds
