@@ -62,7 +62,8 @@ function ad () {
 function mov () {
     echo ${1}
     cp "${1}" ~/private/git/movie-controller/movies/current/movie1.mov
-    open -a /Applications/Google\ Chrome.app file:///Users/lin/private/git/movie-controller/page-mov1.html
+    open -a /Applications/Firefox.app file:///Users/lin/private/git/movie-controller/page-mov1.html
+    # open -a /Applications/Google\ Chrome.app file:///Users/lin/private/git/movie-controller/page-mov1.html
 }
 
 # 分単位でsleepする
