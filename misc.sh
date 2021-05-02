@@ -119,11 +119,13 @@ function c() {
     directory=`cat ~/private/git/company/memo/path.txt | peco`
     cd "${HOME}/${directory}"
     ad
+    brown
 }
 function cc() {
     directory=`cat ~/private/git/box/memo/path-private.txt | peco`
     cd "${HOME}/${directory}"
     ad
+    brown
 }
 function f() {
     directory=`cat ~/private/git/company/memo/path.txt | peco`
