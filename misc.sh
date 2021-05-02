@@ -10,7 +10,6 @@ alias d="date '+%m-%d_' | pbcopy"
 alias dy="date '+%Y-%m-%d_' | pbcopy"
 function mcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 function cdp () { cd "$@" && eval pwd "\"\$$#\""; }
-function c () { cd `ls | peco` && pwd; }
 function cdl () { cd "$@" && ls -la; }
 
 function kt () {
@@ -114,8 +113,31 @@ alias timer_alerter="bash ~/private/git/shell_settings/util/time/timer_alerter.b
 alias timer_sound="bash ~/private/git/shell_settings/util/time/timer_sound.bash"
 alias timer_terminal-notifier="bash ~/private/git/shell_settings/util/time/timer_terminal-notifier.bash"
 
-alias tp="cat ~/private/git/box/memo/terminal-private.sh | peco | pbcopy"
 alias t="cat ~/private/git/company/memo/terminal.sh | peco | pbcopy"
+alias tt="cat ~/private/git/box/memo/terminal-private.sh | peco | pbcopy"
+function c() {
+    directory=`cat ~/private/git/company/memo/path.txt | peco`
+    cd "${HOME}/${directory}"
+    ad
+}
+function cc() {
+    directory=`cat ~/private/git/box/memo/path-private.txt | peco`
+    cd "${HOME}/${directory}"
+    ad
+}
+function f() {
+    directory=`cat ~/private/git/company/memo/path.txt | peco`
+    cd "${HOME}/${directory}"
+    ad
+    open "${HOME}/${directory}"
+}
+function ff() {
+    directory=`cat ~/private/git/box/memo/path-private.txt | peco`
+    cd "${HOME}/${directory}"
+    ad
+    open "${HOME}/${directory}"
+}
+
 
 alias sv="bash ~/private/git/box/program/shell_script/mac-air/search-videos.sh"
 
