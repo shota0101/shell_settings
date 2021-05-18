@@ -115,29 +115,29 @@ alias timer_terminal-notifier="bash ~/private/git/shell_settings/util/time/timer
 
 alias t="cat ~/private/git/company/memo/terminal.sh | peco | pbcopy"
 alias tt="cat ~/private/git/box/memo/terminal-private.sh | peco | pbcopy"
-function c() {
+function cr() {
     directory=`cat ~/private/git/company/memo/path.txt | peco`
     cd "${HOME}/${directory}"
     ad
     brown
 }
-function cc() {
+function ca() {
     directory=`cat ~/private/git/box/memo/path-private.txt | peco`
-    cd "${HOME}/${directory}"
+    cd "${directory}"
     ad
     brown
 }
-function f() {
+function fr() {
     directory=`cat ~/private/git/company/memo/path.txt | peco`
     cd "${HOME}/${directory}"
     ad
     open "${HOME}/${directory}"
 }
-function ff() {
+function fa() {
     directory=`cat ~/private/git/box/memo/path-private.txt | peco`
-    cd "${HOME}/${directory}"
+    cd "${directory}"
     ad
-    open "${HOME}/${directory}"
+    open "${directory}"
 }
 
 
