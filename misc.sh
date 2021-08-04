@@ -6,8 +6,8 @@ alias up="cd .. ; pwd"
 alias p="pbcopy"
 alias cpd="pwd | pbcopy"
 alias cdate="date +%Y-%m-%d_%H-%M-%S | pbcopy"
-alias d="date '+%m-%d_' | pbcopy"
-alias dy="date '+%Y-%m-%d_' | pbcopy"
+alias ctime="date '+%m-%d_' | pbcopy"
+alias cday="date '+%Y-%m-%d_' | pbcopy"
 function mcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 function cdp () { cd "$@" && eval pwd "\"\$$#\""; }
 function cdl () { cd "$@" && ls -la; }
