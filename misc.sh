@@ -140,6 +140,13 @@ function fa() {
     open "${directory}"
 }
 
+function wait() {
+    hour=`expr $1 \* 60 \* 60`
+    minute=`expr $2 \* 60`
+    allSecond=`expr $hour + $minute`
+    echo "${1}時間${2}分(${allSecond}秒)待機"
+    sleep $allSecond
+}
 
 alias sv="bash ~/private/git/box/program/shell_script/mac-air/search-videos.sh"
 
