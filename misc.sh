@@ -111,7 +111,7 @@ alias alarm_sound="bash ~/private/git/shell_settings/util/time/alarm_sound.bash"
 alias alarm_terminal-notifier="bash ~/private/git/shell_settings/util/time/alarm_terminal-notifier.bash"
 alias timer_alerter="bash ~/private/git/shell_settings/util/time/timer_alerter.bash"
 alias timer_sound="bash ~/private/git/shell_settings/util/time/timer_sound.bash"
-alias timer_terminal-notifier="bash ~/private/git/shell_settings/util/time/timer_terminal-notifier.bash"
+alias timer="bash ~/private/git/shell_settings/util/time/timer_terminal-notifier.bash"
 
 alias t="cat ~/private/git/company/memo/terminal.sh | peco | pbcopy"
 alias tt="cat ~/private/git/box/memo/terminal-private.sh | peco | pbcopy"
