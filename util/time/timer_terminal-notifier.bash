@@ -4,6 +4,15 @@
 # brew install terminal-notifier
 
 timer_minutes=$1 # $1は第1引数（タイマーの分数を指定）
+title='timer'
+if [ -n "$2" ]; then
+  title=$2
+fi
+
+# steelblue
+echo -ne "\033]6;1;bg;red;brightness;70\a"
+echo -ne "\033]6;1;bg;green;brightness;130\a"
+echo -ne "\033]6;1;bg;blue;brightness;180\a"
 
 # 1分ごとcurrent_minutesをインクリメントさせtimer_minutesを超えるのを待つ
 declare -i current_minutes=0
@@ -18,14 +27,14 @@ done
 
 # タイマー終了通知
 message="$current_minutes minutes have passed"
-terminal-notifier -title 'timer' -message "${message}" -sound Bottle
+terminal-notifier -title "${title}" -message "${message}" -sound Bottle
 sleep 60 # 最初の通知で反応しない場合は、60秒→30秒→10秒後に再度通知。終わらせるにはCtrl-Cで強制終了
-terminal-notifier -title 'timer' -message "${message}" -sound Bottle
+terminal-notifier -title "${title}" -message "${message}" -sound Bottle
 sleep 30
 
 while true
 do
-    terminal-notifier -title 'timer' -message "${message}" -sound Bottle
+    terminal-notifier -title "${title}" -message "${message}" -sound Bottle
     sleep 10
 done
 
