@@ -7,7 +7,7 @@ alias o="open"
 alias d="open ."
 alias p="pbcopy"
 alias cpd="pwd | pbcopy"
-alias gre="find ./ -type f | xargs grepx"
+alias gre="find ./ -type f | xargs grep"
 alias f="find . -name"
 alias cdate="date +%Y-%m-%d_%H-%M-%S | pbcopy"
 alias ctime="date '+%m-%d_' | pbcopy"
@@ -71,10 +71,6 @@ function mydiff() {
     /Applications/Emacs.app/Contents/MacOS/Emacs -nw --no-init-file ~/diff/b.txt
     opendiff ~/diff/a.txt ~/diff/b.txt
 }
-
-alias m1="bash ~/private/git/movie-controller/next1.bash"
-alias m2="bash ~/private/git/movie-controller/next2.bash"
-alias m3="bash ~/private/git/movie-controller/next3.bash"
 
 alias chrome="open -a /Applications/Google\ Chrome.app"
 alias ij='open -b com.jetbrains.intellij'
