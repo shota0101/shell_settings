@@ -2,6 +2,7 @@
 
 alias g="git"
 alias l="lazygit"
+alias ts="tig status"
 
 # -------------------------------------------------------------------------------
 
@@ -39,12 +40,6 @@ alias gcmdate='git commit -m "$(date)"'
 alias gca="git commit --amend"
 alias gchb="git checkout -b"
 alias gch="git checkout"
-function gchn() {
-    git checkout `git status | peco | awk '{print $3}'`
-}
-function gchm() {
-    git checkout `git status | peco | awk '{print $2}'`
-}
 function gcb() {
     # gitのブランチを表示して、インクリメンタルサーチでブランチを絞って切り替えるワンライナー
     git checkout `git branch | peco`
@@ -69,10 +64,6 @@ function gl() {
 function glc() {
     git log | peco | pbcopy
 }
-
-alias gls="git branch > ~/temp/git_log.txt"
-
-alias glr="cat ~/temp/git_log.txt | peco | pbcopy"
 
 # -------------------------------------------------------------------------------
 
@@ -100,9 +91,6 @@ function grm() {
 # -------------------------------------------------------------------------------
 
 alias grv="git revert"
-
-# -------------------------------------------------------------------------------
-
 alias gs="git status"
 alias gsc="git status | peco | pbcopy"
 alias gsh="git stash"
