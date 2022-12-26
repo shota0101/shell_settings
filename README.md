@@ -5,7 +5,7 @@
 ホームディレクトリ直下に`shell_settings`を配置して、下記のように読み込む
 
 ``` shell
-. ~/git/shell_settings/init.sh
+. ~/Documents/git/shell_settings/init.sh
 ```
 
 zshインストールの参考

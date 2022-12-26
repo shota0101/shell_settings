@@ -105,7 +105,7 @@ function gweb() {
 # -------------------------------------------------------------------------------
 
 function gj() {
-    cd ~/private/git
+    cd ~/Documents/git/
     cd `ls | peco`
     echo -ne "\e]1;`basename $(pwd)`\a" # タブ名を変更カレントディレクトリに変更
     purple
