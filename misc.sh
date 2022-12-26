@@ -75,43 +75,43 @@ function mydiff() {
 alias chrome="open -a /Applications/Google\ Chrome.app"
 alias ij='open -b com.jetbrains.intellij'
 
-alias alarm_alerter="bash ~/private/git/shell_settings/util/time/alarm_alerter.bash"
-alias alarm_sound="bash ~/private/git/shell_settings/util/time/alarm_sound.bash"
-alias alarm_terminal-notifier="bash ~/private/git/shell_settings/util/time/alarm_terminal-notifier.bash"
-alias timer_alerter="bash ~/private/git/shell_settings/util/time/timer_alerter.bash"
-alias timer_sound="bash ~/private/git/shell_settings/util/time/timer_sound.bash"
-alias timer="bash ~/private/git/shell_settings/util/time/timer_terminal-notifier.bash"
+alias alarm_alerter="bash ~/Documents/git/shell_settings/util/time/alarm_alerter.bash"
+alias alarm_sound="bash ~/Documents/git/shell_settings/util/time/alarm_sound.bash"
+alias alarm_terminal-notifier="bash ~/Documents/git/shell_settings/util/time/alarm_terminal-notifier.bash"
+alias timer_alerter="bash ~/Documents/git/shell_settings/util/time/timer_alerter.bash"
+alias timer_sound="bash ~/Documents/git/shell_settings/util/time/timer_sound.bash"
+alias timer="bash ~/Documents/git/shell_settings/util/time/timer_terminal-notifier.bash"
 
-alias t="cat ~/private/git/company/memo/terminal.sh | peco | pbcopy"
-alias tt="cat ~/private/git/box/memo/terminal-private.sh | peco | pbcopy"
+alias t="cat ~/Documents/git/company/memo/terminal.sh | peco | pbcopy"
+alias tt="cat ~/Documents/git/box/memo/terminal-private.sh | peco | pbcopy"
 function cr() {
-    directory=`cat ~/private/git/company/memo/path.txt | peco`
+    directory=`cat ~/Documents/git/company/memo/path.txt | peco`
     cd "${HOME}/${directory}"
     ad
     brown
 }
 function ca() {
-    directory=`cat ~/private/git/box/memo/path-private.txt | peco`
+    directory=`cat ~/Documents/git/box/memo/path-private.txt | peco`
     cd "${directory}"
     ad
     brown
 }
 function fr() {
-    directory=`cat ~/private/git/company/memo/path.txt | peco`
+    directory=`cat ~/Documents/git/company/memo/path.txt | peco`
     cd "${HOME}/${directory}"
     ad
     open "${HOME}/${directory}"
 }
 function fa() {
-    directory=`cat ~/private/git/box/memo/path-private.txt | peco`
+    directory=`cat ~/Documents/git/box/memo/path-private.txt | peco`
     cd "${directory}"
     ad
     open "${directory}"
 }
 
-alias sv="bash ~/private/git/box/program/shell_script/mac-air/search-videos.sh"
+alias sv="bash ~/Documents/git/box/program/shell_script/mac-air/search-videos.sh"
 
-alias kb='date ; node ~/private/git/punch/dist/command/punchBreaktime.js'
-alias ko='date ; node ~/private/git/punch/dist/command/punchOvertime.js'
-alias kp='node ~/private/git/punch/dist/command/printTime.js'
+alias kb='date ; node ~/Documents/git/punch/dist/command/punchBreaktime.js'
+alias ko='date ; node ~/Documents/git/punch/dist/command/punchOvertime.js'
+alias kp='node ~/Documents/git/punch/dist/command/printTime.js'
 
