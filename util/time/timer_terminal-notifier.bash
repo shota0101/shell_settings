@@ -28,16 +28,16 @@ done
 # タイマー終了通知
 message="$current_minutes minutes have passed"
 terminal-notifier -title "${title}" -message "${message}" -sound Bottle
-sleep 60 # 最初の通知で反応しない場合は、60秒→30秒→10秒後に再度通知。終わらせるにはCtrl-Cで強制終了
-terminal-notifier -title "${title}" -message "${message}" -sound Bottle
-sleep 30
+# sleep 60 # 最初の通知で反応しない場合は、60秒→30秒→10秒後に再度通知。終わらせるにはCtrl-Cで強制終了
+# terminal-notifier -title "${title}" -message "${message}" -sound Bottle
+# sleep 30
 
-while true
-do
-    terminal-notifier -title "${title}" -message "${message}" -sound Bottle
-    sleep 10
-done
+# while true
+# do
+#     terminal-notifier -title "${title}" -message "${message}" -sound Bottle
+#     sleep 10
+# done
 
-# 通知音をカスタマイズしたい場合は↓参照
+# 通知音のカスタマイズしたい場合は↓参照
 # https://qiita.com/tbpgr/items/256c83adc8a88502ce3b
 
