@@ -90,14 +90,8 @@ alias ti="bash ~/Documents/git/shell_settings/util/time/timer_terminal-notifier.
 
 alias t="cat ~/Documents/git/company/memo/terminal.sh | peco | pbcopy"
 alias tt="cat ~/Documents/git/box/memo/terminal-private.sh | peco | pbcopy"
-function cr() {
-    directory=`cat ~/Documents/git/company/memo/path.txt | peco`
-    cd "${HOME}/${directory}"
-    ad
-    brown
-}
 function ca() {
-    directory=`cat ~/Documents/git/box/memo/path-private.txt | peco`
+    directory=`cat ~/Documents/git/box/memo/path.txt | peco`
     cd "${directory}"
     ad
     miku-dark-green
