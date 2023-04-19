@@ -75,11 +75,7 @@ function mydiff() {
 alias chrome="open -a /Applications/Google\ Chrome.app"
 alias ij='open -b com.jetbrains.intellij'
 
-alias alarm_alerter="bash ~/Documents/git/shell_settings/util/time/alarm_alerter.bash"
-alias alarm_sound="bash ~/Documents/git/shell_settings/util/time/alarm_sound.bash"
 alias alarm="bash ~/Documents/git/shell_settings/util/time/alarm_terminal-notifier.bash"
-alias timer_alerter="bash ~/Documents/git/shell_settings/util/time/timer_alerter.bash"
-alias timer_sound="bash ~/Documents/git/shell_settings/util/time/timer_sound.bash"
 alias timer="bash ~/Documents/git/shell_settings/util/time/timer_terminal-notifier.bash"
 
 alias t="cat ~/Documents/git/company/memo/terminal.sh | peco | pbcopy"
