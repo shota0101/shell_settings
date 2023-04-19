@@ -9,10 +9,10 @@ if [ -n "$2" ]; then
   title=$2
 fi
 
-# steelblue
-echo -ne "\033]6;1;bg;red;brightness;70\a"
-echo -ne "\033]6;1;bg;green;brightness;130\a"
-echo -ne "\033]6;1;bg;blue;brightness;180\a"
+# miku-pink
+echo -ne "\033]6;1;bg;red;brightness;225\a"
+echo -ne "\033]6;1;bg;green;brightness;40\a"
+echo -ne "\033]6;1;bg;blue;brightness;133\a"
 
 # 1分ごとcurrent_minutesをインクリメントさせtimer_minutesを超えるのを待つ
 declare -i current_minutes=0

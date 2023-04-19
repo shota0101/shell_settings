@@ -100,7 +100,7 @@ function ca() {
     directory=`cat ~/Documents/git/box/memo/path-private.txt | peco`
     cd "${directory}"
     ad
-    brown
+    miku-dark-green
 }
 function fr() {
     directory=`cat ~/Documents/git/company/memo/path.txt | peco`

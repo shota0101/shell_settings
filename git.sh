@@ -108,7 +108,7 @@ function gj() {
     cd ~/Documents/git/
     cd `ls | peco`
     echo -ne "\e]1;`basename $(pwd)`\a" # タブ名を変更カレントディレクトリに変更
-    purple
+    miku-light-green
     # open -b com.jetbrains.intellij . # intellijでプロジェクトを開く ( 既に開いてたらアクティブウィンドウを切り替え )
     pwd
 }
