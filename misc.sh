@@ -48,6 +48,16 @@ alias pink='tab-color 255 20 147'
 alias steelblue='tab-color 70 130 180'
 alias purple='tab-color 120 120 180'
 
+# miku color
+# http://smallwebmemo.blog113.fc2.com/blog-entry-311.html
+alias miku-black='tab-color 55 59 62'
+alias miku-gray='tab-color 190 200 209'
+alias miku-skin='tab-color 255 254 236'
+alias miku-light-green='tab-color 195 229 231'
+alias miku-green='tab-color 134 206 203'
+alias miku-dark-green='tab-color 19 122 127'
+alias miku-pink='tab-color 225 40 133'
+
 # iTermのタブ名を変更
 function a () {
     echo -ne "\e]1;dummy\a" # iTermのアップデートで何故か一度目だと正常に動かないため
