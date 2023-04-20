@@ -1,10 +1,9 @@
 #!/bin/bash
 
 time=$1
-if [ $# -lt 2 ]; then
-    title='alarm'
-else
-    title=$2
+title='alarm'
+if [ -n "$2" ]; then
+    title='alarm : '$2
 fi
 
 # miku-skin
@@ -17,4 +16,5 @@ do
     sleep 10
 done
 
-terminal-notifier -title $title -message $time -sound Bottle
+terminal-notifier -title "${title}" -message `date +"%H:%M"` -sound Bottle
+

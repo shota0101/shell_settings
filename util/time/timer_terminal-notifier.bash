@@ -6,7 +6,7 @@
 timer_minutes=$1 # $1は第1引数（タイマーの分数を指定）
 title='timer'
 if [ -n "$2" ]; then
-  title=$2
+  title='timer : '$2
 fi
 
 # miku-pink
