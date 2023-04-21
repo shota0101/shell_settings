@@ -1,9 +1,9 @@
 #!/bin/bash
 
 time=$1
-title='alarm'
+message='alarm'
 if [ -n "$2" ]; then
-    title='alarm : '$2
+    message='alarm : '$2
 fi
 
 # miku-skin
@@ -13,8 +13,8 @@ echo -ne "\033]6;1;bg;blue;brightness;236\a"
 
 while [ `date +"%Y%m%d%H%M"` -lt `date +"%Y%m%d"`${time} ]
 do
-    sleep 10
+    sleep 1
 done
 
-terminal-notifier -title "${title}" -message `date +"%H:%M"` -sound Bottle
+terminal-notifier -title `date +"%H:%M"` -message "${message}" -sound Bottle
 
