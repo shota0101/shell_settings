@@ -18,3 +18,8 @@ done
 
 terminal-notifier -title `date +"%H:%M"` -message "${message}" -sound Bottle
 
+# miku-gray
+echo -ne "\033]6;1;bg;red;brightness;190\a"
+echo -ne "\033]6;1;bg;green;brightness;200\a"
+echo -ne "\033]6;1;bg;blue;brightness;209\a"
+
