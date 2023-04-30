@@ -4,7 +4,7 @@
 # brew install terminal-notifier
 
 FORMAT_DISPLAY="+%H:%M" # 表示用の時刻文字列
-FORMAT_CALC="+%d%H%M%S" # 比較処理用の時刻文字列
+FORMAT_CALC="+%Y%m%d%H%M%S" # 比較処理用の時刻文字列
 
 timerMinutes=$1 # $1は第1引数（タイマーの分数を指定）
 message='timer'
