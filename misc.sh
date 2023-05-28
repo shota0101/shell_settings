@@ -1,6 +1,19 @@
 # export PS1="%T %~ $ "
 PROMPT='%S%1~%s%(!.#.%%) '
 
+HISTSIZE=365000
+# SAVEHIST
+
+# [pecoを使って端末操作を爆速にする - Qiita](https://qiita.com/reireias/items/fd96d67ccf1fdffb24ed)
+# 履歴をpecoで絞る
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
+
 alias upsh="source ~/.zshrc" # シェルの設定を再読込
 alias up="cd .. ; pwd"
 alias o="open"
