@@ -16,18 +16,13 @@ bindkey '^R' peco-history-selection
 
 alias upsh="source ~/.zshrc" # シェルの設定を再読込
 alias up="cd .. ; pwd"
-alias o="open"
 alias d="open ."
 alias p="pbcopy"
 alias cpd="pwd | pbcopy"
-alias gre="find ./ -type f | xargs grep"
-alias f="find . -name"
 alias cdate="date +%Y-%m-%d_%H-%M-%S | pbcopy"
 alias ctime="date '+%m-%d_' | pbcopy"
 alias cday="date '+%Y-%m-%d_' | pbcopy"
 function mcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
-function cdp () { cd "$@" && eval pwd "\"\$$#\""; }
-function cdl () { cd "$@" && ls -la; }
 
 function kt () {
     # 参考
