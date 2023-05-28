@@ -1,7 +1,7 @@
 # Git
 
 alias g="git"
-alias l="lazygit"
+alias la="lazygit"
 alias ts="tig status"
 
 # -------------------------------------------------------------------------------

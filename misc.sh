@@ -23,6 +23,20 @@ alias cdate="date +%Y-%m-%d_%H-%M-%S | pbcopy"
 alias ctime="date '+%m-%d_' | pbcopy"
 alias cday="date '+%Y-%m-%d_' | pbcopy"
 function mcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
+alias lc='ls -a | peco | pbcopy'
+
+function l () {
+    cd "`ls -a | peco`"
+    ls -la
+    pwd
+}
+
+function f () {
+    directory=`find . -type d -not -path "*/.git/*"  -not -path "*/.git" | sort | peco`
+    cd "$directory"
+    ls -la
+    pwd
+}
 
 function kt () {
     # 参考
