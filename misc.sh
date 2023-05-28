@@ -22,6 +22,7 @@ alias cpd="pwd | pbcopy"
 alias cdate="date +%Y-%m-%d_%H-%M-%S | pbcopy"
 alias ctime="date '+%m-%d_' | pbcopy"
 alias cday="date '+%Y-%m-%d_' | pbcopy"
+alias ds="find . -name '.DS_Store' -type f -ls -delete"
 function mcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 alias lc='ls -a | peco | pbcopy'
 
