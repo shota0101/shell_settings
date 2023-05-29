@@ -27,7 +27,7 @@ function mcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 alias lc='ls -a | peco | pbcopy'
 
 function l () {
-    cd "`ls -a | peco`"
+    cd "`find . -type d -maxdepth 1 | sort | peco`"
     ls -la
     pwd
 }
