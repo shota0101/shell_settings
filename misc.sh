@@ -16,7 +16,7 @@ bindkey '^R' peco-history-selection
 
 alias upsh="source ~/.zshrc" # シェルの設定を再読込
 alias u="cd .. ; pwd"
-alias finder="open ." # 予約語と干渉するのでfiは使えない
+alias i="open ." # 予約語と干渉するのでfiは使えない
 alias p="peco | pbcopy"
 alias cpd="pwd | pbcopy"
 alias cdate="date +%Y-%m-%d_%H-%M-%S | pbcopy"
