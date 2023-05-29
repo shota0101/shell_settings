@@ -26,14 +26,22 @@ alias ds="find . -name '.DS_Store' -type f -ls -delete"
 function mcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 alias lc='ls -a | peco | pbcopy'
 
+# カレントディレクトリ直下のディレクトリをインクリメンタルサーチして移動
 function l () {
     cd "`find . -type d -maxdepth 1 | sort | peco`"
     ls -la
     pwd
 }
 
+# カレントディレクトリ配下のディレクトリをインクリメンタルサーチして移動
+# 第一引数：探索するディレクトリの深さを指定（省略時は全て探索）
 function f () {
-    directory=`find . -type d -not -path "*/.git/*"  -not -path "*/.git" | sort | peco`
+    if [ -n "$1" ]; then
+	directory=`find . -type d -not -path "*/.git/*"  -not -path "*/.git" -maxdepth $1 | sort | peco`
+    else
+	directory=`find . -type d -not -path "*/.git/*"  -not -path "*/.git" | sort | peco`
+    fi
+
     cd "$directory"
     ls -la
     pwd
