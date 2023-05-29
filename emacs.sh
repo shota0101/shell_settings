@@ -1,14 +1,14 @@
 # emacsをGUIで起動
 emacsDirectory=$(brew --prefix emacs)
-alias egui="/Applications/Emacs.app/Contents/MacOS/Emacs"
+alias eg="/Applications/Emacs.app/Contents/MacOS/Emacs"
 # emacsをCUIで起動（設定を読み込まずに）
-alias eorg="/Applications/Emacs.app/Contents/MacOS/Emacs -nw --no-init-file"
+alias en="/Applications/Emacs.app/Contents/MacOS/Emacs -nw --no-init-file"
 # emacs daemonの起動
-alias edaemon="${emacsDirectory}/bin/emacs --daemon"
+alias ed="${emacsDirectory}/bin/emacs --daemon"
 # emacsclientの起動
 alias e="${emacsDirectory}/bin/emacsclient $@ -nw"
 # emacs daemonの終了
-alias killedaemon="${emacsDirectory}/bin/emacsclient -e '(kill-emacs)'"
+alias edk="${emacsDirectory}/bin/emacsclient -e '(kill-emacs)'"
 
 # emacsを読み込み専用で開く
 function er() {
