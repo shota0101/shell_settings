@@ -128,18 +128,7 @@ function ca() {
     ad
     miku-dark-green
 }
-function fr() {
-    directory=`cat ~/Documents/git/company/memo/path.txt | peco`
-    cd "${HOME}/${directory}"
-    ad
-    open "${HOME}/${directory}"
-}
-function fa() {
-    directory=`cat ~/Documents/git/box/memo/path-private.txt | peco`
-    cd "${directory}"
-    ad
-    open "${directory}"
-}
+alias cc="cat ~/Documents/git/box/memo/path.txt | peco | pbcopy"
 
 alias sv="bash ~/Documents/git/box/program/shell_script/mac-air/search-videos.sh"
 
