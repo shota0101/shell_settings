@@ -29,7 +29,7 @@ do
 done
 
 # タイマー終了通知
-terminal-notifier -title "${timerMinutes} m" -message "${message}" -sound Bottle
+terminal-notifier -title "${timerMinutes} m" -message "${message}" -sound Submarine
 
 # miku-gray
 echo -ne "\033]6;1;bg;red;brightness;190\a"

@@ -26,7 +26,7 @@ do
     sleep 1
 done
 
-terminal-notifier -title `date +"%H:%M"` -message "${message}" -sound Bottle
+terminal-notifier -title `date +"%H:%M"` -message "${message}" -sound Submarine
 
 # miku-gray
 echo -ne "\033]6;1;bg;red;brightness;190\a"
