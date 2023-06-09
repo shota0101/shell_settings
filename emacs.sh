@@ -9,6 +9,7 @@ alias ed="${emacsDirectory}/bin/emacs --daemon"
 alias e="${emacsDirectory}/bin/emacsclient $@ -nw"
 # emacs daemonの終了
 alias edk="${emacsDirectory}/bin/emacsclient -e '(kill-emacs)'"
+alias le='e `ls -a | peco`'
 
 # emacsを読み込み専用で開く
 function er() {
