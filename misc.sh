@@ -100,7 +100,7 @@ function a () {
 # iTermのタブ名をカレントディレクトリに変更
 function ad () {
     echo -ne "\e]1;dummy\a" # iTermのアップデートで何故か一度目だと正常に動かないため
-    echo -ne "\e]1;`basename $(pwd)`\a"
+    echo -ne "\e]1;`basename "$(pwd)"`\a"
 }
 
 # 分単位でsleepする
