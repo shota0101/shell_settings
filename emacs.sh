@@ -7,6 +7,8 @@ alias en="/Applications/Emacs.app/Contents/MacOS/Emacs -nw --no-init-file"
 alias ed="${emacsDirectory}/bin/emacs --daemon"
 # emacsclientの起動
 alias e="${emacsDirectory}/bin/emacsclient $@ -nw"
+# brewのemacsが使えない場合
+# alias e="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 # emacs daemonの終了
 alias edk="${emacsDirectory}/bin/emacsclient -e '(kill-emacs)'"
 alias le='e `find . -type f -maxdepth 1 | sort | peco`'
