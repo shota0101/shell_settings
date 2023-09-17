@@ -12,10 +12,10 @@ if [ -n "$2" ]; then
   message='timer : '$2
 fi
 
-# miku-pink
-echo -ne "\033]6;1;bg;red;brightness;225\a"
-echo -ne "\033]6;1;bg;green;brightness;40\a"
-echo -ne "\033]6;1;bg;blue;brightness;133\a"
+# miku-skin
+echo -ne "\033]6;1;bg;red;brightness;255\a"
+echo -ne "\033]6;1;bg;green;brightness;254\a"
+echo -ne "\033]6;1;bg;blue;brightness;236\a"
 
 timeDisplayStart=`date -j ${FORMAT_DISPLAY}`
 timeDisplayEnd=`date -v+"${timerMinutes}"M -j ${FORMAT_DISPLAY}`
@@ -31,8 +31,8 @@ done
 # タイマー終了通知
 terminal-notifier -title "${timerMinutes} m" -message "${message}" -sound Submarine
 
-# miku-gray
-echo -ne "\033]6;1;bg;red;brightness;190\a"
-echo -ne "\033]6;1;bg;green;brightness;200\a"
-echo -ne "\033]6;1;bg;blue;brightness;209\a"
+# miku-light-green
+echo -ne "\033]6;1;bg;red;brightness;195\a"
+echo -ne "\033]6;1;bg;green;brightness;229\a"
+echo -ne "\033]6;1;bg;blue;brightness;231\a"
 

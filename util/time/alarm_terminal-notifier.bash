@@ -28,8 +28,8 @@ done
 
 terminal-notifier -title `date +"%H:%M"` -message "${message}" -sound Submarine
 
-# miku-gray
-echo -ne "\033]6;1;bg;red;brightness;190\a"
-echo -ne "\033]6;1;bg;green;brightness;200\a"
-echo -ne "\033]6;1;bg;blue;brightness;209\a"
+# miku-light-green
+echo -ne "\033]6;1;bg;red;brightness;195\a"
+echo -ne "\033]6;1;bg;green;brightness;229\a"
+echo -ne "\033]6;1;bg;blue;brightness;231\a"
 
