@@ -101,6 +101,7 @@ function a () {
 function ad () {
     echo -ne "\e]1;dummy\a" # iTermのアップデートで何故か一度目だと正常に動かないため
     echo -ne "\e]1;`basename "$(pwd)"`\a"
+    miku-pink
 }
 
 # 分単位でsleepする
