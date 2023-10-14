@@ -1,3 +1,5 @@
+. ~/Documents/git/shell_settings/common.sh
+
 # export PS1="%T %~ $ "
 PROMPT='%S%1~%s%(!.#.%%) '
 
