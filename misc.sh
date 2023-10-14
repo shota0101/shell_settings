@@ -32,7 +32,7 @@ alias lc='ls -a | peco | pbcopy'
 
 # カレントディレクトリ直下のディレクトリをインクリメンタルサーチして移動
 function l () {
-    cd "`find . -type d -maxdepth 1 | sort | peco`"
+    cd "`find . -maxdepth 1 -type d | sort | peco`"
     ls -la
     pwd
 }
