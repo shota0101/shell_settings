@@ -126,8 +126,11 @@ alias ti="bash ~/Documents/git/shell_settings/util/time/timer_terminal-notifier.
 
 alias t="cat ~/Documents/git/company/memo/terminal.sh | peco | pbcopy"
 alias tt="cat ~/Documents/git/box/memo/terminal-private.sh | peco | pbcopy"
+
 function ca() {
     directory=`cat ~/Documents/git/box/memo/path.txt | peco`
+    directory=${directory/\~/$HOME} # チルダをホームディレクトリに置換
+    directory=${directory/GOOGLE_DRIVE/$GOOGLE_DRIVE_ROOT}
     cd "${directory}"
     ad
     miku-dark-green
