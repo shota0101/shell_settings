@@ -1,3 +1,5 @@
+. ~/Documents/git/shell_settings/common.sh
+
 # emacsをGUIで起動
 alias eg="/Applications/Emacs.app/Contents/MacOS/Emacs"
 # emacsをCUIで起動（設定を読み込まずに）
