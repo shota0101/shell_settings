@@ -133,8 +133,8 @@ alias ij='open -b com.jetbrains.intellij'
 alias al="bash ~/Documents/git/shell_settings/util/time/alarm_terminal-notifier.bash"
 alias ti="bash ~/Documents/git/shell_settings/util/time/timer_terminal-notifier.bash"
 
-alias t="cat ~/Documents/git/company/memo/terminal.sh | peco | pbcopy"
-alias tt="cat ~/Documents/git/box/memo/terminal-private.sh | peco | pbcopy"
+alias t="cat ~/Documents/git/company/memo/terminal.sh | peco | tr -d '\n' | pbcopy"
+alias tt="cat ~/Documents/git/box/memo/terminal-private.sh | peco | tr -d '\n' | pbcopy"
 
 function ca() {
     directory=`cat ~/Documents/git/box/memo/path.txt | peco`
