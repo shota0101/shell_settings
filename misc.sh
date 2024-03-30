@@ -144,7 +144,13 @@ function ca() {
     ad
     miku-dark-green
 }
-alias cc="cat ~/Documents/git/box/memo/path.txt | peco | tr -d '\n' | pbcopy"
+
+function cc() {
+    directory=`cat ~/Documents/git/box/memo/path.txt | peco | tr -d '\n'`
+    directory=${directory/\~/$HOME} # チルダをホームディレクトリに置換
+    directory=${directory/GOOGLE_DRIVE/$GOOGLE_DRIVE_ROOT}
+    echo -n "$directory" | pbcopy
+}
 
 alias sv="bash ~/Documents/git/box/program/shell_script/mac-air/search-videos.sh"
 
