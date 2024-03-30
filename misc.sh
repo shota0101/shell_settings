@@ -19,16 +19,16 @@ bindkey '^R' peco-history-selection
 alias upsh="source ~/.zshrc" # シェルの設定を再読込
 alias u="cd .. ; pwd"
 alias i="open ." # 予約語と干渉するのでfiは使えない
-alias p="peco | pbcopy"
-alias cpd="pwd | pbcopy"
-alias cdate="date +%Y-%m-%d_%H-%M-%S | pbcopy"
-alias ctime="date '+%m-%d_' | pbcopy"
-alias cday="date '+%Y-%m-%d_' | pbcopy"
+alias p="peco | tr -d '\n' | pbcopy"
+alias cpd="pwd | tr -d '\n' | pbcopy"
+alias cdate="date +%Y-%m-%d_%H-%M-%S | tr -d '\n' | pbcopy"
+alias ctime="date '+%m-%d_' | tr -d '\n' | pbcopy"
+alias cday="date '+%Y-%m-%d_' | tr -d '\n' | pbcopy"
 alias ds="find . -name '.DS_Store' -type f -ls -delete"
 alias n="terminal-notifier -title 'title' -message 'message' -sound Bottle"
 function mcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 # lsの結果をクリップボードにコピー
-alias lc='ls -a | peco | pbcopy'
+alias lc="ls -a | peco | tr -d '\n' | pbcopy"
 
 # カレントディレクトリ直下のディレクトリをインクリメンタルサーチして移動
 function l () {
@@ -144,7 +144,7 @@ function ca() {
     ad
     miku-dark-green
 }
-alias cc="cat ~/Documents/git/box/memo/path.txt | peco | pbcopy"
+alias cc="cat ~/Documents/git/box/memo/path.txt | peco | tr -d '\n' | pbcopy"
 
 alias sv="bash ~/Documents/git/box/program/shell_script/mac-air/search-videos.sh"
 
