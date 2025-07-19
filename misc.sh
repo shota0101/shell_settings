@@ -60,7 +60,7 @@ alias cpd="pwd | tr -d '\n' | pbcopy"
 alias cdate="date +%Y-%m-%d_%H-%M-%S | tr -d '\n' | pbcopy"
 alias ctime="date '+%m-%d_' | tr -d '\n' | pbcopy"
 alias cday="date '+%Y-%m-%d_' | tr -d '\n' | pbcopy"
-alias ds="find . -name '.DS_Store' -type f -ls -delete"
+alias ds="find . -name '.DS_Store' -type f -ls -delete ; find . -name \"._*\" -type f -ls -delete"
 alias n="terminal-notifier -title 'title' -message 'message' -sound Bottle"
 function mcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 # lsの結果をクリップボードにコピー
