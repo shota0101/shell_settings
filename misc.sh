@@ -6,6 +6,41 @@ PROMPT='%S%1~%s%(!.#.%%) '
 HISTSIZE=365000
 # SAVEHIST
 
+# 「echo -n」はzsh用
+function sp() {
+    # 時間を入力（空なら 0 として扱う）
+    echo -n "何時間待機しますか？（未入力なら0）: "
+    read input_hour
+    input_hour=${input_hour:-0}
+
+    # 分を入力（空なら終了）
+    echo -n "何分待機しますか？（未入力で終了）: "
+    read input_minute
+    if [[ -z "$input_minute" ]]; then
+        echo "分が入力されなかったため、スクリプトを終了します。"
+        return
+    fi
+
+    # pmset 実行の確認（デフォルトは yes）
+    echo -n "開始時に pmset displaysleepnow を実行しますか？ (Y/n): "
+    read do_sleep
+    do_sleep=${do_sleep:-y}
+
+    hour_sec=$((input_hour * 3600))
+    min_sec=$((input_minute * 60))
+    all_sec=$((hour_sec + min_sec))
+
+    echo "${input_hour}時間${input_minute}分（${all_sec}秒）待機します"
+
+    if [[ "$do_sleep" =~ ^[Yy]$ ]]; then
+        echo "pmset displaysleepnow を実行します..."
+        pmset displaysleepnow
+    fi
+
+    sleep $all_sec
+    pmset sleepnow
+}
+
 # [pecoを使って端末操作を爆速にする - Qiita](https://qiita.com/reireias/items/fd96d67ccf1fdffb24ed)
 # 履歴をpecoで絞る
 function peco-history-selection() {
