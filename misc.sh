@@ -12,31 +12,40 @@ function sp() {
     echo -n "何時間待機しますか？（未入力なら0）: "
     read input_hour
     input_hour=${input_hour:-0}
-
-    # 分を入力（空なら終了）
-    echo -n "何分待機しますか？（未入力で終了）: "
+    
+    # 分を入力（空なら 0 として扱う）
+    echo -n "何分待機しますか？（未入力なら0）: "
     read input_minute
-    if [[ -z "$input_minute" ]]; then
-        echo "分が入力されなかったため、スクリプトを終了します。"
+    input_minute=${input_minute:-0}
+    
+    # 秒を入力（空なら 0 として扱う）
+    echo -n "何秒待機しますか？（未入力なら0）: "
+    read input_second
+    input_second=${input_second:-0}
+    
+    # すべてが0の場合は終了
+    if [[ $input_hour -eq 0 && $input_minute -eq 0 && $input_second -eq 0 ]]; then
+        echo "時間、分、秒がすべて0のため、スクリプトを終了します。"
         return
     fi
-
+    
     # pmset 実行の確認（デフォルトは yes）
     echo -n "開始時に pmset displaysleepnow を実行しますか？ (Y/n): "
     read do_sleep
     do_sleep=${do_sleep:-y}
-
+    
+    # 総秒数を計算
     hour_sec=$((input_hour * 3600))
     min_sec=$((input_minute * 60))
-    all_sec=$((hour_sec + min_sec))
-
-    echo "${input_hour}時間${input_minute}分（${all_sec}秒）待機します"
-
+    all_sec=$((hour_sec + min_sec + input_second))
+    
+    echo "${input_hour}時間${input_minute}分${input_second}秒（${all_sec}秒）待機します"
+    
     if [[ "$do_sleep" =~ ^[Yy]$ ]]; then
         echo "pmset displaysleepnow を実行します..."
         pmset displaysleepnow
     fi
-
+    
     sleep $all_sec
     pmset sleepnow
 }
