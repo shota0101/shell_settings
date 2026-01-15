@@ -12,7 +12,7 @@ alias e="${EMACS_DIRECTORY}/bin/emacsclient $@ -nw"
 # alias e="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 # emacs daemonの終了
 alias edk="${EMACS_DIRECTORY}/bin/emacsclient -e '(kill-emacs)'"
-alias le='e `find . -type f -maxdepth 1 | sort | peco`'
+alias le='e `find . -type f -maxdepth 1 | sort | fzf`'
 
 # emacsを読み込み専用で開く
 function er() {

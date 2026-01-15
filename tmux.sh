@@ -10,7 +10,7 @@ function tn() {
 
 function ta() {
     tab-color 200 240 240
-    session=`tmux ls | peco | awk '{print $1}'`
+    session=`tmux ls | fzf | awk '{print $1}'`
     echo -ne "\e]1;$session\a"
     tmux a -t $session
     tab-color 128 128 128

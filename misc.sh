@@ -51,20 +51,20 @@ function sp() {
 }
 
 # [pecoを使って端末操作を爆速にする - Qiita](https://qiita.com/reireias/items/fd96d67ccf1fdffb24ed)
-# 履歴をpecoで絞る
-function peco-history-selection() {
-    BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
+# 履歴をfzfで絞る
+function fzf-history-selection() {
+    BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | fzf`
     CURSOR=$#BUFFER
     zle reset-prompt
 }
-zle -N peco-history-selection
-bindkey '^R' peco-history-selection
+zle -N fzf-history-selection
+bindkey '^R' fzf-history-selection
 
 alias upsh="source ~/.zshrc" # シェルの設定を再読込
 alias u="cd .. ; pwd"
 alias le='ls -a | less -S' # -Sで折り返さない
 alias i="open ." # 予約語と干渉するのでfiは使えない
-alias p="peco | tr -d '\n' | pbcopy"
+alias p="fzf | tr -d '\n' | pbcopy"
 alias cpd="pwd | tr -d '\n' | pbcopy"
 alias cdate="date +%Y-%m-%d_%H-%M-%S | tr -d '\n' | pbcopy"
 alias ctime="date '+%m-%d_' | tr -d '\n' | pbcopy"
@@ -73,12 +73,12 @@ alias ds="find . -name '.DS_Store' -type f -ls -delete ; find . -name \"._*\" -t
 alias n="terminal-notifier -title 'title' -message 'message' -sound Bottle"
 function mcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 # lsの結果をクリップボードにコピー
-alias lc="ls -a | peco | tr -d '\n' | pbcopy"
+alias lc="ls -a | fzf | tr -d '\n' | pbcopy"
 
 # カレントディレクトリ直下のディレクトリをインクリメンタルサーチして移動
 function l () {
     while true; do
-	file=`ls | sort | peco`
+	file=`ls | sort | fzf`
 	if [ -z "$file" ]; then
 	    echo 'abort'
 	    break
@@ -95,9 +95,9 @@ function l () {
 # 第一引数：探索するディレクトリの深さを指定（省略時は全て探索）
 function f () {
     if [ -n "$1" ]; then
-	directory=`find . -type d -not -path "*/.git/*"  -not -path "*/.git" -maxdepth $1 | sort | peco`
+	directory=`find . -type d -not -path "*/.git/*"  -not -path "*/.git" -maxdepth $1 | sort | fzf`
     else
-	directory=`find . -type d -not -path "*/.git/*"  -not -path "*/.git" | sort | peco`
+	directory=`find . -type d -not -path "*/.git/*"  -not -path "*/.git" | sort | fzf`
     fi
 
     cd "$directory"
@@ -178,11 +178,11 @@ alias ij='open -b com.jetbrains.intellij'
 alias al="bash ~/Documents/git/shell_settings/util/time/alarm_terminal-notifier.bash"
 alias ti="bash ~/Documents/git/shell_settings/util/time/timer_terminal-notifier.bash"
 
-alias t="cat ~/Documents/git/company/memo/terminal.sh | peco | tr -d '\n' | pbcopy"
-alias tt="cat ~/Documents/git/box/memo/terminal-private.sh | peco | tr -d '\n' | pbcopy"
+alias t="cat ~/Documents/git/company/memo/terminal.sh | fzf | tr -d '\n' | pbcopy"
+alias tt="cat ~/Documents/git/box/memo/terminal-private.sh | fzf | tr -d '\n' | pbcopy"
 
 function ca() {
-    directory=`cat ~/Documents/git/box/memo/path.txt | peco`
+    directory=`cat ~/Documents/git/box/memo/path.txt | fzf`
     directory=${directory/\~/$HOME} # チルダをホームディレクトリに置換
     directory=${directory/GOOGLE_DRIVE/$GOOGLE_DRIVE_ROOT}
     cd "${directory}"
@@ -191,7 +191,7 @@ function ca() {
 }
 
 function cc() {
-    directory=`cat ~/Documents/git/box/memo/path.txt | peco | tr -d '\n'`
+    directory=`cat ~/Documents/git/box/memo/path.txt | fzf | tr -d '\n'`
     directory=${directory/\~/$HOME} # チルダをホームディレクトリに置換
     directory=${directory/GOOGLE_DRIVE/$GOOGLE_DRIVE_ROOT}
     echo -n "$directory" | pbcopy

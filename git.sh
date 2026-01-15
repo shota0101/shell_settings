@@ -11,25 +11,25 @@ alias ga="git add "
 alias gap="git add -p"
 
 function gan() {
-    git add `git status | peco | awk '{print $1}'`
+    git add `git status | fzf | awk '{print $1}'`
 }
 
 function gam() {
-    git add `git status | peco | awk '{print $2}'`
+    git add `git status | fzf | awk '{print $2}'`
 }
 
 # -------------------------------------------------------------------------------
 
 alias gb="git branch "
 # alias gb="git branch > ~/temp/temp.txt ; $(brew --prefix emacs)/bin/emacsclient -nw ~/temp/temp.txt"
-alias gbc="git branch | peco | pbcopy"
+alias gbc="git branch | fzf | pbcopy"
 
 function gbd() {
-    git branch -D `git branch --merged | peco`
+    git branch -D `git branch --merged | fzf`
 }
 
 function gbda() {
-    git branch -D `git branch | peco`
+    git branch -D `git branch | fzf`
 }
 
 # -------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ alias gchb="git checkout -b"
 alias gch="git checkout"
 function gcb() {
     # gitのブランチを表示して、インクリメンタルサーチでブランチを絞って切り替えるワンライナー
-    git checkout `git branch | peco`
+    git checkout `git branch | fzf`
 }
 
 # -------------------------------------------------------------------------------
@@ -58,11 +58,11 @@ function gdf() {
 # -------------------------------------------------------------------------------
 
 function gl() {
-    git log | peco | awk '{print $2}' | pbcopy
+    git log | fzf | awk '{print $2}' | pbcopy
 }
 
 function glc() {
-    git log | peco | pbcopy
+    git log | fzf | pbcopy
 }
 
 # -------------------------------------------------------------------------------
@@ -82,17 +82,17 @@ function grbh() {
 alias gr="git reset HEAD"
 alias grs="git reset --soft"
 function grn() {
-    git reset HEAD `git status | peco | awk '{print $3}'`
+    git reset HEAD `git status | fzf | awk '{print $3}'`
 }
 function grm() {
-    git reset HEAD `git status | peco | awk '{print $2}'`
+    git reset HEAD `git status | fzf | awk '{print $2}'`
 }
 
 # -------------------------------------------------------------------------------
 
 alias grv="git revert"
 alias gs="git status"
-alias gsc="git status | peco | pbcopy"
+alias gsc="git status | fzf | pbcopy"
 alias gsh="git stash"
 alias gsp="git stash pop"
 
@@ -106,7 +106,7 @@ function gweb() {
 
 function gj() {
     cd ~/Documents/git/
-    cd `ls | peco`
+    cd `ls | fzf`
     echo -ne "\e]1;`basename $(pwd)`\a" # タブ名を変更カレントディレクトリに変更
     miku-green
     # open -b com.jetbrains.intellij . # intellijでプロジェクトを開く ( 既に開いてたらアクティブウィンドウを切り替え )
