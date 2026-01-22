@@ -83,8 +83,24 @@ function l () {
 	    echo 'abort'
 	    break
 	elif [ -f "$file" ]; then
-	    open "$file"
-	    break
+            case "$file" in
+                *.ts|*.txt|*.md)
+                    less "$file"
+                    ;;
+                *.sh)
+                    sh "$file"
+                    ;;
+                *.bash)
+                    bash "$file"
+                    ;;
+                *.js)
+                    node "$file"
+                    ;;
+                *)
+                    open "$file"
+                    ;;
+            esac
+            break
 	elif [ -d "$file" ]; then
 	    cd "$file"
 	fi
