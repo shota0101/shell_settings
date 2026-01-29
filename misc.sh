@@ -64,7 +64,8 @@ alias upsh="source ~/.zshrc" # シェルの設定を再読込
 alias u="cd .. ; pwd"
 alias le='ls -a | less -S' # -Sで折り返さない
 alias i="open ." # 予約語と干渉するのでfiは使えない
-alias p="fzf | tr -d '\n' | pbcopy"
+alias p="pbcopy"
+alias f="fzf | tr -d '\n' | pbcopy"
 alias cpd="pwd | tr -d '\n' | pbcopy"
 alias cdate="date +%Y-%m-%d_%H-%M-%S | tr -d '\n' | pbcopy"
 alias ctime="date '+%m-%d_' | tr -d '\n' | pbcopy"
@@ -72,8 +73,6 @@ alias cday="date '+%Y-%m-%d_' | tr -d '\n' | pbcopy"
 alias ds="find . -name '.DS_Store' -type f -ls -delete ; find . -name \"._*\" -type f -ls -delete"
 alias n="terminal-notifier -title 'title' -message 'message' -sound Bottle"
 function mcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
-# lsの結果をクリップボードにコピー
-alias lc="ls -a | fzf | tr -d '\n' | pbcopy"
 
 # カレントディレクトリ直下のディレクトリをインクリメンタルサーチして移動
 function l () {
@@ -105,20 +104,6 @@ function l () {
 	    cd "$file"
 	fi
     done
-}
-
-# カレントディレクトリ配下のディレクトリをインクリメンタルサーチして移動
-# 第一引数：探索するディレクトリの深さを指定（省略時は全て探索）
-function f () {
-    if [ -n "$1" ]; then
-	directory=`find . -type d -not -path "*/.git/*"  -not -path "*/.git" -maxdepth $1 | sort | fzf`
-    else
-	directory=`find . -type d -not -path "*/.git/*"  -not -path "*/.git" | sort | fzf`
-    fi
-
-    cd "$directory"
-    ls -la
-    pwd
 }
 
 function kt () {
