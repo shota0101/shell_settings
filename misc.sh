@@ -66,6 +66,7 @@ alias le='ls -a | less -S' # -Sで折り返さない
 alias i="open ." # 予約語と干渉するのでfiは使えない
 alias p="pbcopy"
 alias f="fzf | tr -d '\n' | pbcopy"
+alias lc="ls -a | fzf | tr -d '\n' | pbcopy"
 alias cpd="pwd | tr -d '\n' | pbcopy"
 alias cdate="date +%Y-%m-%d_%H-%M-%S | tr -d '\n' | pbcopy"
 alias ctime="date '+%m-%d_' | tr -d '\n' | pbcopy"
@@ -179,10 +180,10 @@ alias ij='open -b com.jetbrains.intellij'
 alias al="bash ~/Documents/git/shell_settings/util/time/alarm_terminal-notifier.bash"
 alias ti="bash ~/Documents/git/shell_settings/util/time/timer_terminal-notifier.bash"
 
-alias t="cat ~/Documents/git/company/memo/terminal.sh | fzf | tr -d '\n' | pbcopy"
-alias tt="cat ~/Documents/git/box/memo/terminal-private.sh | fzf | tr -d '\n' | pbcopy"
+alias c="cat ~/Documents/git/company/memo/terminal.sh | fzf | tr -d '\n' | pbcopy"
+alias cl="cat ~/Documents/git/box/memo/terminal-private.sh | fzf | tr -d '\n' | pbcopy"
 
-function ca() {
+function j() {
     directory=`cat ~/Documents/git/box/memo/path.txt | fzf`
     directory=${directory/\~/$HOME} # チルダをホームディレクトリに置換
     directory=${directory/GOOGLE_DRIVE/$GOOGLE_DRIVE_ROOT}
@@ -191,7 +192,7 @@ function ca() {
     miku-dark-green
 }
 
-function cc() {
+function jc() {
     directory=`cat ~/Documents/git/box/memo/path.txt | fzf | tr -d '\n'`
     directory=${directory/\~/$HOME} # チルダをホームディレクトリに置換
     directory=${directory/GOOGLE_DRIVE/$GOOGLE_DRIVE_ROOT}
