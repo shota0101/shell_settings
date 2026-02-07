@@ -1,4 +1,4 @@
-if [ command -v termux-clipboard-set >/dev/null 2>&1 ]; then
+if command -v termux-clipboard-set >/dev/null 2>&1; then
     # termux
     alias pbcopy='termux-clipboard-set'
     EMACS_DIRECTORY='/usr'
@@ -19,4 +19,6 @@ else
     EMACS_DIRECTORY='/usr'
     alias pbcopy='xsel --clipboard --input'
 fi
+
+alias c='pbcopy'
 
