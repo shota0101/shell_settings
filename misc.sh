@@ -64,7 +64,6 @@ alias upsh="source ~/.zshrc" # シェルの設定を再読込
 alias u="cd .. ; pwd"
 alias le='ls -a | less -S' # -Sで折り返さない
 alias i="open ." # 予約語と干渉するのでfiは使えない
-alias p="pbcopy"
 alias f="fzf | tr -d '\n' | pbcopy"
 alias lc="ls -a | fzf | tr -d '\n' | pbcopy"
 alias cpd="pwd | tr -d '\n' | pbcopy"
@@ -73,6 +72,7 @@ alias ctime="date '+%m-%d_' | tr -d '\n' | pbcopy"
 alias cday="date '+%Y-%m-%d_' | tr -d '\n' | pbcopy"
 alias ds="find . -name '.DS_Store' -type f -ls -delete ; find . -name \"._*\" -type f -ls -delete"
 alias n="terminal-notifier -title 'title' -message 'message' -sound Bottle"
+
 function mcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 # カレントディレクトリ直下のディレクトリをインクリメンタルサーチして移動
@@ -180,8 +180,16 @@ alias ij='open -b com.jetbrains.intellij'
 alias al="bash ~/Documents/git/shell_settings/util/time/alarm_terminal-notifier.bash"
 alias ti="bash ~/Documents/git/shell_settings/util/time/timer_terminal-notifier.bash"
 
-alias c="cat ~/Documents/git/company/memo/terminal.sh | fzf | tr -d '\n' | pbcopy"
-alias cl="cat ~/Documents/git/box/memo/terminal-private.sh | fzf | tr -d '\n' | pbcopy"
+# alias t="cat ~/Documents/git/company/memo/terminal.sh | fzf | tr -d '\n' | pbcopy"
+# alias tl="cat ~/Documents/git/box/memo/terminal-private.sh | fzf | tr -d '\n' | pbcopy"
+
+LOCAL_COMMAND_LIST=~/Documents/git/box/memo/terminal-private.sh
+t() {
+    cat \
+	~/Documents/git/company/memo/terminal.sh \
+	$LOCAL_COMMAND_LIST \
+	| fzf | tr -d '\n' | pbcopy
+}
 
 function j() {
     directory=`cat ~/Documents/git/box/memo/path.txt | fzf`
@@ -198,10 +206,4 @@ function jc() {
     directory=${directory/GOOGLE_DRIVE/$GOOGLE_DRIVE_ROOT}
     echo -n "$directory" | pbcopy
 }
-
-alias sv="bash ~/Documents/git/box/program/shell_script/mac-air/search-videos.sh"
-
-alias kb='date ; node ~/Documents/git/punch/dist/command/punchBreaktime.js'
-alias ko='date ; node ~/Documents/git/punch/dist/command/punchOvertime.js'
-alias kp='node ~/Documents/git/punch/dist/command/printTime.js'
 

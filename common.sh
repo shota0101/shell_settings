@@ -1,5 +1,8 @@
-
-if [ -d "/Volumes" ]; then
+if [ command -v termux-clipboard-set >/dev/null 2>&1 ]; then
+    # termux
+    alias pbcopy='termux-clipboard-set'
+    EMACS_DIRECTORY='/usr'
+elif [ -d "/Volumes" ]; then
     # mac
     GOOGLE_DRIVE_ROOT='/Volumes/GoogleDrive/My Drive'
     EMACS_DIRECTORY=$(brew --prefix emacs)
