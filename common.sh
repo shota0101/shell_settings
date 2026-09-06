@@ -4,7 +4,7 @@ if command -v termux-clipboard-set >/dev/null 2>&1; then
     EMACS_DIRECTORY='/usr'
 elif [ -d "/Volumes" ]; then
     # mac
-    GOOGLE_DRIVE_ROOT='/Volumes/GoogleDrive/My Drive'
+    GOOGLE_DRIVE_ROOT='/Users/shota/Library/CloudStorage/GoogleDrive-hayashi0101@epg.jp/My Drive'
     EMACS_DIRECTORY=$(brew --prefix emacs)
 elif [ -d "/mnt/c" ]; then
     # windows wsl
